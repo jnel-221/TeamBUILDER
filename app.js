@@ -14,6 +14,7 @@ const { create } = require("domain");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
+//confirm
 const confirmAddTeamMember = [
   {
     type: "confirm",
@@ -26,17 +27,17 @@ const createEmployee = [
   {
     type: "input",
     name: "name",
-    message: "Please Enter Employee Name.",
+    message: "Please Enter Employee Name:",
   },
   {
     type: "input",
     name: "id",
-    message: "Please Enter Employee ID.",
+    message: "Please Enter Employee ID:",
   },
   {
     type: "input",
     name: "email",
-    message: "Please Enter Employee Email.",
+    message: "Please Enter Employee Email:",
     validate: function (value) {
       let pass = value.match(
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -60,7 +61,7 @@ const getGitHub = [
   {
     type: "input",
     name: "github",
-    message: "Please Enter Employee's GitHub Profile Name.",
+    message: "Please Enter Employee's GitHub Profile Name:",
   },
 ];
 
@@ -68,7 +69,7 @@ const getSchool = [
   {
     type: "input",
     name: "school",
-    message: "Please Enter The Name Of Employee's School.",
+    message: "Please Enter The Name Of Employee's School:",
   },
 ];
 
@@ -76,7 +77,7 @@ const getOfficeNumber = [
   {
     type: "input",
     name: "officeNumber",
-    message: "Please Enter Employee's Office Number.",
+    message: "Please Enter Employee's Office Number:",
   },
 ];
 
@@ -88,26 +89,42 @@ async function init() {
 
   console.log("what's this?", name, id, email, role);
 
-  async function chooseRole(role) {
-    switch (role) {
-      case "Engineer":
-        const { github } = await inquirer.prompt(getGitHub);
-        console.log(github);
-        break;
-      case "Intern":
-        const { school } = await inquirer.prompt(getSchool);
-        console.log(school);
-        break;
-      case "Manager":
-        const { officeNumber } = await inquirer.prompt(getOfficeNumber);
-        console.log(officeNumber);
-        break;
-      default:
-        console.log(role);
-    }
+  if (role === "Engineer") {
+    const { github } = await inquirer.prompt(getGitHub);
+    console.log(name, id, email, role, github);
+  } else if (role === "Intern") {
+    const { school } = await inquirer.prompt(getSchool);
+    console.log(school);
+  } else if (role === "Manager") {
+    const { officeNumber } = await inquirer.prompt(getOfficeNumber);
+    console.log(officeNumber);
   }
-  chooseRole(role);
+  const addNew = await inquirer.prompt(confirmAddTeamMember);
+  newEmployee = addNew;
+  console.log(addNew);
+  console.log(newEmployee);
 }
+
+// async function chooseRole(role) {
+//   switch (role) {
+//     case "Engineer":
+//       const { github } = await inquirer.prompt(getGitHub);
+//       console.log(github);
+//       break;
+//     case "Intern":
+//       const { school } = await inquirer.prompt(getSchool);
+//       console.log(school);
+//       break;
+//     case "Manager":
+//       const { officeNumber } = await inquirer.prompt(getOfficeNumber);
+//       console.log(officeNumber);
+//       break;
+//     default:
+//       console.log(role);
+//   }
+// }
+// chooseRole(role);
+
 init();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
