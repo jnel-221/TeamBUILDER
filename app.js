@@ -9,11 +9,113 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-
+const { create } = require("domain");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+const employees = [];
 
+const confirmTeamBuild = [
+  {
+    type: "confirm",
+    name: "addEmployee",
+    message: "Would you like to add a new team member?",
+    default: true,
+  },
+];
+
+const createEmployee = [
+  {
+    type: "input",
+    name: "name",
+    message: "Please Enter Employee Name.",
+  },
+  {
+    type: "list",
+    name: "role",
+    message: "Please Selecct Employee Role:",
+    choices: ["Engineer", "Intern", "Manager"],
+    default: "Engineer",
+  },
+  {
+    type: "input",
+    name: "id",
+    message: "Please Enter Employee ID.",
+  },
+  {
+    type: "input",
+    name: "email",
+    message: "Please Enter Employee Email.",
+    validate: function (value) {
+      let pass = value.match(
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      );
+      if (pass) {
+        return true;
+      }
+      return "Please enter valid email address.";
+    },
+  },
+];
+
+const getGitHub = [
+  {
+    type: "input",
+    name: "github",
+    message: "Please Enter Employee's GitHub Profile Name.",
+  },
+];
+
+const getSchool = [
+  {
+    type: "input",
+    name: "school",
+    message: "Please Enter The Name Of Employee's School.",
+  },
+];
+
+const getOfficeNumber = [
+  {
+    type: "input",
+    name: "officeNumber",
+    message: "Please Enter Employee's Office Number.",
+  },
+];
+
+async function getEmployeeInfo() {
+  try {
+    const teamBuild = await inquirer.prompt(confirmTeamBuild);
+    const addStaff = await inquirer.prompt(createEmployeee);
+
+    if (!teamBuild.addEmployee) {
+      console.log("Application terminated");
+    } else {
+      addStaff;
+    }
+
+    //const addStaff = await inquirer.prompt(createEmployeee);
+
+    // const chooseRole = (role) => {
+    //   switch (role) {
+    //     case "Engineer":
+    //       console.log("yo");
+    //       break;
+    //     case "Intern":
+    //       console.log("hey hey");
+    //       break;
+    //     case "Manager":
+    //       console.log("Michael!");
+    //       break;
+    //     default:
+    //       console.log(role);
+    //   }
+    //
+    console.log("what am i?", teamBuild);
+  } catch (err) {
+    return new Error(err);
+  }
+}
+getEmployeeInfo();
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
