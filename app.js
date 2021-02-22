@@ -83,21 +83,24 @@ const getOfficeNumber = [
 async function init() {
   const team = [];
   newEmployee = true;
-  
-    const { name, id, email, role } = await inquirer.prompt(createEmployee);
 
-    console.log("what's this?", name, id, email, role);
+  const { name, id, email, role } = await inquirer.prompt(createEmployee);
 
-  const chooseRole = (role) => {
+  console.log("what's this?", name, id, email, role);
+
+  async function chooseRole(role) {
     switch (role) {
       case "Engineer":
-        console.log("yo");
+        const { github } = await inquirer.prompt(getGitHub);
+        console.log(github);
         break;
       case "Intern":
-        console.log("hey hey");
+        const { school } = await inquirer.prompt(getSchool);
+        console.log(school);
         break;
       case "Manager":
-        console.log("Michael!");
+        const { officeNumber } = await inquirer.prompt(getOfficeNumber);
+        console.log(officeNumber);
         break;
       default:
         console.log(role);
