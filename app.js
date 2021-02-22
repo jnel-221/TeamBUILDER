@@ -83,35 +83,32 @@ const getOfficeNumber = [
 async function init() {
   const team = [];
 
-
-
   try {
-      const j = await inquirer.prompt(createEmployee);
-    team.push(j);
-    console.log(j);
-  
+    const { role } = await inquirer.prompt(createEmployee);
+    team.push(role);
+    console.log(team[0]);
+    console.log("what's this?", role);
   } catch (err) {
     return new Error(err);
   }
 
-    //const addStaff = await inquirer.prompt(createEmployeee);
+  //const addStaff = await inquirer.prompt(createEmployeee);
 
-    // const chooseRole = (role) => {
-    //   switch (role) {
-    //     case "Engineer":
-    //       console.log("yo");
-    //       break;
-    //     case "Intern":
-    //       console.log("hey hey");
-    //       break;
-    //     case "Manager":
-    //       console.log("Michael!");
-    //       break;
-    //     default:
-    //       console.log(role);
-    //   }
-    //
-  
+  // const chooseRole = (role) => {
+  //   switch (role) {
+  //     case "Engineer":
+  //       console.log("yo");
+  //       break;
+  //     case "Intern":
+  //       console.log("hey hey");
+  //       break;
+  //     case "Manager":
+  //       console.log("Michael!");
+  //       break;
+  //     default:
+  //       console.log(role);
+  //   }
+  //
 }
 init();
 // After the user has input all employees desired, call the `render` function (required
