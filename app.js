@@ -11,9 +11,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 const { create } = require("domain");
 
-// Write code to use inquirer to gather information about the development team members,
-// and to create objects for each team member (using the correct classes as blueprints!)
-
 //confirm if user wans to add a new team member
 const confirmAddEmployee = [
   {
@@ -23,7 +20,8 @@ const confirmAddEmployee = [
   },
 ];
 
-const createEmployee = [
+//get info for Employee super class
+const getEmployee = [
   {
     type: "input",
     name: "name",
@@ -57,6 +55,7 @@ const createEmployee = [
   },
 ];
 
+//get GitHub for Engineer subclass
 const getGitHub = [
   {
     type: "input",
@@ -65,6 +64,7 @@ const getGitHub = [
   },
 ];
 
+//get School name for Intern subclass
 const getSchool = [
   {
     type: "input",
@@ -73,6 +73,7 @@ const getSchool = [
   },
 ];
 
+//get Office Number for Manager subclass
 const getOfficeNumber = [
   {
     type: "input",
@@ -86,32 +87,28 @@ async function init() {
   let newEmployee = true;
 
   while (newEmployee) {
-    const { name, id, email, role } = await inquirer.prompt(createEmployee);
-
-    console.log("what's this? ", name, id, email, role);
+    const { name, id, email, role } = await inquirer.prompt(getEmployee);
 
     if (role === "Engineer") {
       const { github } = await inquirer.prompt(getGitHub);
       const newEngineer = new Engineer(name, id, email, github);
       team.push(newEngineer);
-      team.forEach((employee) => console.log(employee));
     } else if (role === "Intern") {
       const { school } = await inquirer.prompt(getSchool);
       const newIntern = new Intern(name, id, email, school);
       team.push(newIntern);
-      team.forEach((employee) => console.log(employee));
     } else if (role === "Manager") {
       const { officeNumber } = await inquirer.prompt(getOfficeNumber);
       const newManager = new Manager(name, id, email, officeNumber);
       team.push(newManager);
-      team.forEach((employee) => console.log(employee));
     }
     const { addEmployee } = await inquirer.prompt(confirmAddEmployee);
 
     newEmployee = addEmployee;
     team.forEach((employee) => console.log(employee));
-    console.log(newEmployee);
+    
   }
+  render(team);
 }
 
 init();
@@ -125,9 +122,7 @@ init();
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
 
-// HINT: each employee type (manager, engineer, or intern) has slightly different
-// information; write your code to ask different questions via inquirer depending on
-// employee type.
+
 
 // HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
 // and Intern classes should all extend from a class named Employee; see the directions
