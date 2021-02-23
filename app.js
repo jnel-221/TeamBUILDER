@@ -11,7 +11,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 const { create } = require("domain");
 
-//confirm if user wans to add a new team member
+//confirm if user wants to add a new team member
 const confirmAddEmployee = [
   {
     type: "confirm",
@@ -106,9 +106,12 @@ async function init() {
 
     newEmployee = addEmployee;
     team.forEach((employee) => console.log(employee));
-    
   }
-  render(team);
+  fs.writeFile(outputPath, render(team), (err) => {
+    err
+      ? console.log(err)
+      : console.log("Sending new team page to output file...");
+  });
 }
 
 init();
@@ -121,8 +124,6 @@ init();
 // `output` folder. You can use the variable `outputPath` above target this location.
 // Hint: you may need to check if the `output` folder exists and create it if it
 // does not.
-
-
 
 // HINT: make sure to build out your classes first! Remember that your Manager, Engineer,
 // and Intern classes should all extend from a class named Employee; see the directions
