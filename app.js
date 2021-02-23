@@ -83,33 +83,33 @@ const getOfficeNumber = [
 
 async function init() {
   const team = [];
-  newEmployee = true;
+  let newEmployee = true;
 
   while (newEmployee) {
     const { name, id, email, role } = await inquirer.prompt(createEmployee);
 
-    console.log("what's this?", name, id, email, role);
+    console.log("what's this? ", name, id, email, role);
 
     if (role === "Engineer") {
       const { github } = await inquirer.prompt(getGitHub);
-      const newEngineer = new Engineer(name, id, email, role, github);
+      const newEngineer = new Engineer(name, id, email, github);
       team.push(newEngineer);
       team.forEach((employee) => console.log(employee));
     } else if (role === "Intern") {
       const { school } = await inquirer.prompt(getSchool);
-      const newIntern = new Intern(name, id, email, role, school);
+      const newIntern = new Intern(name, id, email, school);
       team.push(newIntern);
       team.forEach((employee) => console.log(employee));
     } else if (role === "Manager") {
       const { officeNumber } = await inquirer.prompt(getOfficeNumber);
-      const newManager = new Manager(name, id, email, role, officeNumber);
+      const newManager = new Manager(name, id, email, officeNumber);
       team.push(newManager);
       team.forEach((employee) => console.log(employee));
     }
     const { addEmployee } = await inquirer.prompt(confirmAddEmployee);
 
     newEmployee = addEmployee;
-
+    team.forEach((employee) => console.log(employee));
     console.log(newEmployee);
   }
 }
