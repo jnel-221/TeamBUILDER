@@ -28,11 +28,11 @@ npm i
 
 ## Usage
 
-Type node app.js in commandline to begin. Next, answer the series of questions about your team members to generate profiles. You can add as many as you like. When you're finished, answer 'no' when asked if you want to add a new employee. Your team page will then generate and populate in the output folder.
+Type 'node app.js' in command line to begin. Next, answer the series of questions about your team members to generate profiles. You can add as many as you like. When you're finished, answer 'no' when asked if you want to add a new employee. Your team page will then generate and populate in the output folder.
 
 Screenshot of completed page:
 
-![myteam.html page](./assets/images/me2team.png)
+![myTeam.html page](./assets/images/myTeam.png)
 
 [Back to Table of Contents](#table-of-contents)
 
