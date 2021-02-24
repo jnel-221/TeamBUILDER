@@ -32,7 +32,7 @@ Type 'node app.js' in command line to begin. Next, answer the series of question
 
 Screenshot of completed page:
 
-![myTeam.html page](./assets/images/myTeam.png)
+![myTeam.html page](./assets/images/myteam.png)
 
 [Back to Table of Contents](#table-of-contents)
 
