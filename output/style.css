@@ -9,6 +9,10 @@ body {
   border-bottom: 4px solid #75dddd;
 }
 
+.team-area {
+  padding-top: 20px;
+}
+
 /* Cards */
 .employee-card {
   margin: 0px 15px;
