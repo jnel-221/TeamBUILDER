@@ -4,8 +4,6 @@ body {
 }
 /* Jumbotron */
 .team-heading {
-  /* background-color: #0fa3b1; */
-  /* background-color: #75dddd; */
   background-color: #0f12b1;
   color: #ffffff;
   border-bottom: 6px solid #75dddd;
@@ -30,7 +28,6 @@ body {
   background-color: #babebe41;
 }
 .fas {
-  /* color: #aa3e98; */
   color: #75dddd;
 }
 
