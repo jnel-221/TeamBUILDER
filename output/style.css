@@ -1,11 +1,32 @@
 /* main.html stylings */
-
+body {
+  background-color: #ffffff;
+}
 /* Jumbotron */
 .team-heading {
-  background-image: url(https://images.unsplash.com/reserve/d1Ntvq9mSVmV0RcnWN1Y_23rd%20Studios%20Photography%20Boulder%20Colorado.jpg?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
-  background-color: turquoise;
-  color: white;
-  border-bottom: 3px, solid, coral;
+  background-color: #0fa3b1;
+  color: #ffffff;
+  border-bottom: 4px solid #75dddd;
 }
 
 /* Cards */
+.employee-card {
+  margin: 0px 15px;
+  box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
+}
+.card-header {
+  background-color: #0fa3b1;
+  color: #ffffff;
+  border-bottom: 2px solid #75dddd;
+}
+
+.card-body {
+  background-color: #babebe41;
+}
+.fas {
+  color: #aa3e98;
+}
+
+li {
+  color: #003950;
+}

@@ -11,15 +11,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 const render = require("./lib/htmlRenderer");
 const { create } = require("domain");
 
-//confirm if user wants to add a new team member
-const confirmAddEmployee = [
-  {
-    type: "confirm",
-    name: "addEmployee",
-    message: "Would you like to add a new employee?",
-  },
-];
-
 //get info for Employee super class
 const getEmployee = [
   {
@@ -79,6 +70,15 @@ const getOfficeNumber = [
     type: "input",
     name: "officeNumber",
     message: "Please enter Manager's office number:",
+  },
+];
+
+//confirm if user wants to add a new team member
+const confirmAddEmployee = [
+  {
+    type: "confirm",
+    name: "addEmployee",
+    message: "Would you like to add a new employee?",
   },
 ];
 
