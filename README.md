@@ -30,7 +30,7 @@ To install TeamBuilder, first clone the respository Github: git@github.com:jnel-
 
 * Run "git clone git@github.com:jnel-221/TeamBUILDER.git".
 
-* Navigate to your newly cloned TeamBuilder folder.
+* Navigate to your newly cloned TeamBUILDER folder.
 
 * Run "NPM install", aka "npm i" to load the dependencies.
 
@@ -44,13 +44,13 @@ Type 'node app.js' in command line to begin. Next, answer the series of question
 
 Screenshot of completed page:
 
-![myTeam.html page](./assets/images/myteam.png)
+![My Team Page](./assets/images/myteam2.png)
 
 [Back to Table of Contents](#table-of-contents)
 
 ## Credits
 
-This app uses [node.js](https://nodejs.org/en/), [inquirer](https://www.npmjs.com/package/inquirer), HTML, CSS, and is powered by JavaScript. Design resources include: [Bootstrap](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), and [coolers](https://coolors.co/). Unit tests powered by [jest](https://www.npmjs.com/package/jest).
+This app uses [node.js](https://nodejs.org/en/), [inquirer](https://www.npmjs.com/package/inquirer), HTML, CSS, and is powered by JavaScript. Design resources include: [Bootstrap](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), [coolers](https://coolors.co/), and [unsplash](https://unsplash.com/) (photo credit to Andy Holmes). Unit tests powered by [jest](https://www.npmjs.com/package/jest).
 
 [Back to Table of Contents](#table-of-contents)
 
