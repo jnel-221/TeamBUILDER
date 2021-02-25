@@ -8,6 +8,8 @@
 
 A command-line application for creating a team HTML page.
 
+Watch a demonstration of TeamBUILDER [here](https://drive.google.com/file/d/1FcZfSF_0xNTqJBtrAalv7HahyQwPi8Ur/view?usp=sharing)!
+
 ## Table of Contents
 
 - [Installation](#Installation)
@@ -21,7 +23,17 @@ A command-line application for creating a team HTML page.
 ## Installation
 
 ```bash
-npm i
+
+To install TeamBuilder, first clone the respository Github: git@github.com:jnel-221/TeamBUILDER.git, then:
+
+* Open your terminal, or other tool used to access the command line, and navigate to the file where you want to save TeamBuilder.
+
+* Run "git clone git@github.com:jnel-221/TeamBUILDER.git".
+
+* Navigate to your newly cloned TeamBuilder folder.
+
+* Run "NPM install", aka "npm i" to load the dependencies.
+
 ```
 
 [Back to Table of Contents](#table-of-contents)
@@ -38,7 +50,7 @@ Screenshot of completed page:
 
 ## Credits
 
-This app uses [node.js](https://nodejs.org/en/), [inquirer](https://www.npmjs.com/package/inquirer), HTML, CSS, and is powered by JavaScript. Design resources include: [Bootstrap](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), and [coolers](https://coolors.co/).
+This app uses [node.js](https://nodejs.org/en/), [inquirer](https://www.npmjs.com/package/inquirer), HTML, CSS, and is powered by JavaScript. Design resources include: [Bootstrap](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), and [coolers](https://coolors.co/). Unit tests powered by [jest](https://www.npmjs.com/package/jest).
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -51,7 +63,9 @@ Please review the community standards for contributing to this project, adopted 
 ## Tests
 
 ```bash
-After installation, enter npm run test to run unit tests.
+After installation, enter "npm run test" to run unit tests.
+
+When all unit tests pass, you are ready to begin team building!
 ```
 
 [Back to Table of Contents](#table-of-contents)
