@@ -42,9 +42,18 @@ To install TeamBuilder, first clone the respository Github: git@github.com:jnel-
 
 Type 'node app.js' in command line to begin. Next, answer the series of questions about your team members to generate profiles. You can add as many as you like. When you're finished, answer 'no' when asked if you want to add a new employee. Your team page will then generate and populate in the output folder.
 
-Screenshot of completed page:
 
-![My Team Page](./assets/images/myteam2.png)
+Small team display:
+
+![My Team: Small](./assets/images/myteam2.png)
+
+Large team display:
+
+![My Team: Large](./assets/TeamBuilder.gif)
+
+Large team display on mobile:
+
+![My Team: Mobile](./assets/myTeamMobile.gif)
 
 [Back to Table of Contents](#table-of-contents)
 
