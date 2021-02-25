@@ -12,12 +12,15 @@ body {
 }
 
 .team-area {
-  padding-top: 20px;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 
 /* Cards */
 .employee-card {
-  margin: 0px 15px;
+  margin: 15px 15px;
   box-shadow: 0 40px 60px 0 rgba(15, 15, 15, 0.4);
 }
 .card-header {

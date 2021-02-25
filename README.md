@@ -50,7 +50,7 @@ Screenshot of completed page:
 
 ## Credits
 
-This app uses [node.js](https://nodejs.org/en/), [inquirer](https://www.npmjs.com/package/inquirer), HTML, CSS, and is powered by JavaScript. Design resources include: [Bootstrap](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), [coolers](https://coolors.co/), and [unsplash](https://unsplash.com/) (photo credit to Andy Holmes). Unit tests powered by [jest](https://www.npmjs.com/package/jest).
+This app uses [node.js](https://nodejs.org/en/), [inquirer](https://www.npmjs.com/package/inquirer), HTML, CSS, and is powered by JavaScript. Design resources include: [Bootstrap](https://getbootstrap.com/), [FontAwesome](https://fontawesome.com/), [coolers](https://coolors.co/), and [unsplash](https://unsplash.com/) (photo credit to Andy Holmes). Unit tests powered by [jest](https://www.npmjs.com/package/jest). Last but not least, a shout-out to my study group, who helped me think through some tricky testing behavior and CSS issues.
 
 [Back to Table of Contents](#table-of-contents)
 
